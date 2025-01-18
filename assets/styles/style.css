@@ -49,6 +49,11 @@ body {
 }
 
 .board {
+    display: grid;
+    grid-template-rows: repeat(var(--cell-count), 1fr);
+    grid-template-columns: repeat(var(--cell-count), 1fr);
+    grid-area: 2 / 2 / calc(var(--cell-count) + 2) / calc(var(--cell-count) + 2);
+
     background: repeating-linear-gradient(
       to bottom,
       black 0,
@@ -69,70 +74,60 @@ body {
     );
 }
 
-.ships, .board {
-    grid-area: 2 / 2 / calc(var(--cell-count) + 2) / calc(var(--cell-count) + 2);
-}
-
-.ships {
-    display: grid;
-    grid-template-rows: repeat(var(--cell-count), 1fr);
-    grid-template-columns: repeat(var(--cell-count), 1fr);
-}
-
 .ship {
     margin: calc(var(--cell-size) * var(--ship-margin-fraction));
     border: 2px solid black;
 }
 
-.six-l {
+.six-len{
     background-color: red;
     grid-area: 10 / 5 / span 1 / span 6;
 }
 
-.four-l {
+.four-len{
     background-color: blue;
 }
 
-.three-l {
+.three-len{
     background-color: #00ff00;
 }
 
-.two-l {
+.two-len{
     background-color: blueviolet;
 }
 
-.four-l.fr-inst {
+.four-len.fr-inst {
     grid-area: 3 / 1 / span 4 / span 1;
 }
 
-.four-l.sc-inst {
+.four-len.sc-inst {
     grid-area: 1 / 7 / span 1 / span 4;
 }
 
-.three-l.fr-inst {
+.three-len.fr-inst {
     grid-area: 1 / 4 / span 3 / span 1;
 }
 
-.three-l.sc-inst {
+.three-len.sc-inst {
     grid-area: 3 / 6 / span 1 / span 3;
 }
 
-.three-l.tr-inst {
+.three-len.tr-inst {
     grid-area: 6 / 10 / span 3 / span 1;
 }
 
-.two-l.fr-inst {
+.two-len.fr-inst {
     grid-area: 1 / 1 / span 1 / span 2;
 }
 
-.two-l.sc-inst {
+.two-len.sc-inst {
     grid-area: 3 / 10 / span 2 / span 1;
 }
 
-.two-l.tr-inst {
+.two-len.tr-inst {
     grid-area: 6 / 6 / span 2 / span 1;
 }
 
-.two-l.fu-inst {
+.two-len.fu-inst {
     grid-area: 8 / 1 / span 1 / span 2;
 }
